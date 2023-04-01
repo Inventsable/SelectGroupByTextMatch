@@ -14,7 +14,7 @@ Seeing the way others were approaching how to script this made me curious to try
 - Loop through every comma-separated string to check for match
 - If match, add initial group to selection and remove group from first loop
 
-This seemed pretty inefficient to me especially considering how laggy Illustrator gets looping through large documents. My approach was instead:
+Having 3 nested loops felt inefficient to me especially considering how laggy Illustrator gets looping through large documents and how the most intensive parent loop would be redundant if groupItems had no text or reason to be looped. My approach was instead:
 
 - Construct a dynamic `RegExp` which matches from any of the comma-separated values from input prompt
 - Loop through every `TextFrameItem` and filter this list to only items matching the RegExp
